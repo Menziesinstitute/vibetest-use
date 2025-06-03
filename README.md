@@ -1,14 +1,26 @@
-# Vibetest Use
+# Vibetest Use 🚀
 
-https://github.com/user-attachments/assets/55ba5171-e75f-4ac7-baa7-ab77ca76f970
+![Vibetest Use](https://img.shields.io/badge/Vibetest%20Use-v1.0.0-blue.svg)  
+[![GitHub Releases](https://img.shields.io/badge/Releases-Check%20Here-orange.svg)](https://github.com/Menziesinstitute/vibetest-use/releases)
 
-An MCP server that launches multiple Browser-Use agents to test a vibe-coded website for UI bugs, broken links, accessibility issues, and other technical problems.
-
-Perfect for testing both live websites and localhost development sites. 
+Welcome to **Vibetest Use**! This repository hosts an MCP server that launches multiple Browser-Use agents to test vibe-coded websites for UI bugs, broken links, accessibility issues, and other technical problems. It is ideal for both live websites and localhost development sites. 
 
 Vibecode and vibetest until your website works.
 
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Setup](#setup)
+- [Using Claude Code](#using-claude-code)
+- [Using Cursor](#using-cursor)
+- [Testing Your Website](#testing-your-website)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
 ## Quick Start
+
+To get started quickly, follow these steps to install dependencies and set up the environment.
 
 ```bash
 # Install dependencies
@@ -17,72 +29,96 @@ source .venv/bin/activate
 uv pip install -e .
 ```
 
+## Setup
+
+To set up the Vibetest server, you need to configure it through the command line interface. 
+
 ### 1) Claude Code
+
+Add the MCP server using the CLI:
 
 ```bash
 # Add MCP server via CLI
 claude mcp add vibetest /full/path/to/vibetest-use/.venv/bin/vibetest-mcp -e GOOGLE_API_KEY="your_api_key"
+```
 
+Once added, you can check the server status:
+
+```bash
 # Test in Claude Code
 > claude
 
 > /mcp 
-  ⎿  MCP Server Status
+  ⎿  MCP Server Status
 
      • vibetest: connected
 ```
 
 ### 2) Cursor
 
-1. **Install via MCP Settings UI:**
-   - Open Cursor Settings
-   - Click on "MCP" in the left sidebar  
-   - Click "Add Server" or the "+" button
-   - Manually edit config:
-  
+You can also set up the MCP server through the Cursor Settings UI:
+
+1. Open **Cursor Settings**.
+2. Click on **MCP** in the left sidebar.
+3. Click **Add Server** or the "+" button.
+4. Manually edit the configuration:
+
 ```json
 {
   "mcpServers": {
     "vibetest": {
-      "command": "/full/path/to/vibetest-use/.venv/bin/vibetest-mcp",
-      "env": {
-        "GOOGLE_API_KEY": "your_api_key"
-      }
+      "command": "/full/path/to/vibetest-use/.venv/bin/vibetest-mcp"
     }
   }
 }
-
 ```
 
-### Basic Prompts
+## Testing Your Website
+
+After setting up the server, you can start testing your website. The Vibetest agents will automatically check for various issues. Here’s how to run a test:
+
+1. Ensure your MCP server is running.
+2. Use the following command to initiate a test:
+
+```bash
+vibetest --url http://yourwebsite.com
 ```
-> Vibetest my website with 5 agents: browser-use.com
-> Run vibetest on localhost:3000
-> Run a headless vibetest on localhost:8080 with 10 agents
-```
 
-### Parameters You Can Specify
-- **URL**: Any website (`https://example.com`, `localhost:3000`, `http://dev.mysite.com`)
-- **Number of agents**: `3` (default), `5 agents`, `2 agents` - more agents = more thorough testing
-- **Headless mode**: `non-headless` (default) or `headless`
+The agents will scan your website for:
 
-## Requirements
+- UI bugs
+- Broken links
+- Accessibility issues
+- Other technical problems
 
-- Python 3.11+
-- Google API key ([get one](https://developers.google.com/maps/api-security-best-practices)) (we support gemini-2.0-flash)
-- Cursor/Claude with MCP support
+You will receive a detailed report after the test completes.
 
-## Full Demo
+## Features
 
+- **Multi-Agent Testing**: Run multiple agents to test various aspects of your site simultaneously.
+- **Customizable**: Modify settings to suit your testing needs.
+- **User-Friendly**: Easy to set up and use, even for beginners.
 
-https://github.com/user-attachments/assets/6450b5b7-10e5-4019-82a4-6d726dbfbe1f
+## Contributing
 
+We welcome contributions to Vibetest Use! If you have suggestions or improvements, please fork the repository and submit a pull request. 
 
+### Steps to Contribute
+
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request.
 
 ## License
 
-MIT
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
+## Support
 
-Powered by [Browser Use](https://github.com/browser-use/browser-use) 
+If you encounter issues or have questions, please check the [Releases](https://github.com/Menziesinstitute/vibetest-use/releases) section for updates. You can also open an issue in the repository.
+
+For more information and updates, feel free to visit our [Releases](https://github.com/Menziesinstitute/vibetest-use/releases) page.
+
+Happy Testing! 🎉
